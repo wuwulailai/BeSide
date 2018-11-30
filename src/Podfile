@@ -1,0 +1,45 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+platform :ios, '9.0'
+
+inhibit_all_warnings!
+
+target 'Beside' do
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for Beside
+  pod 'RxSwift'
+  pod 'ReSwift'
+  pod 'RxCocoa'
+
+  # UI
+  pod 'RxDataSources'
+  pod 'MJRefresh'
+  pod 'Toast-Swift', '~> 4.0.0'
+  pod 'SCLAlertView'
+
+  # 网络
+  pod 'RxAlamofire'
+
+  # 数据库
+  pod 'RealmSwift'
+
+  # 调试
+  pod 'Bugly'
+  pod 'CocoaDebug', :configurations => ['Debug']
+
+  target 'BesideTests' do
+    inherit! :search_paths
+    # Pods for testing
+
+    pod 'Quick'
+    pod 'Nimble'
+  end
+
+  target 'BesideUITests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end
