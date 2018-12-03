@@ -24,7 +24,10 @@ target 'Beside' do
 
   # 数据库
   pod 'RealmSwift'
-
+  
+  # DLNA
+  
+  
   # 调试
   pod 'Bugly'
   pod 'CocoaDebug', :configurations => ['Debug']
