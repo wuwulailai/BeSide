@@ -23,7 +23,8 @@ platform :ios do
 
   lane :buildSimple do |options|
 
-  	cocoapods
+  	# cocoapods
+	git_pull
   	configuration = options[:configuration] ? options[:configuration] : 'Debug'
 
   	# 更新版本号
