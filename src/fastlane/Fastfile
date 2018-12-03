@@ -22,19 +22,21 @@ platform :ios do
   end
 
   lane :buildSimple do |options|
+
+  	cocoapods
   	configuration = options[:configuration] ? options[:configuration] : 'Debug'
 
   	# 更新版本号
   	increment_build_number_in_plist(xcodeproj: 'Beside.xcodeproj', scheme: 'Beside', build_configuration_name: configuration)
 
-    disable_automatic_code_signing(path: "Beside.xcodeproj")
+    # disable_automatic_code_signing(path: "Beside.xcodeproj")
   	# build
   	gym(scheme: 'Beside', 
   		configuration: configuration, 
   		export_method: 'development',
   		output_directory: '../build',
   		include_bitcode: false)
-  	enable_automatic_code_signing(path: "Beside.xcodeproj")
+  	# enable_automatic_code_signing(path: "Beside.xcodeproj")
   end
 
   lane :beta do
