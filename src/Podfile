@@ -21,6 +21,8 @@ target 'Beside' do
 
   # 网络
   pod 'RxAlamofire'
+  
+  pod 'ModelMapper'
 
   # 数据库
   pod 'RealmSwift'

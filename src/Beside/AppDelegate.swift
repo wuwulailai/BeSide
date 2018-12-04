@@ -7,15 +7,29 @@
 //
 
 import UIKit
+import ReSwift
+
+let mainStore = Store<AppState>(
+    reducer: AppReducer,
+    state: nil
+)
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var appCoordinator: AppCoordinator!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        window = UIWindow()
+        let navigationController = UINavigationController()
+        window?.rootViewController = navigationController
+        appCoordinator = AppCoordinator(navigationController: navigationController)
+        appCoordinator.start()
+        
+        window?.makeKeyAndVisible()
         return true
     }
 
