@@ -13,7 +13,5 @@ protocol DashboardViewModelType {
 }
 
 final class DashboardViewModel {
-    
-    
-    
+
 }

@@ -8,27 +8,27 @@
 
 import UIKit
 import ReSwift
+import RxCoordinator
+import XCGLogger
 
 let mainStore = Store<AppState>(
     reducer: AppReducer,
     state: nil
 )
+let log = XCGLogger.default
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var appCoordinator: AppCoordinator!
+    var coordinator: BasicCoordinator<MainRoute>!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-        
-        window = UIWindow()
-        let navigationController = UINavigationController()
-        window?.rootViewController = navigationController
-        appCoordinator = AppCoordinator(navigationController: navigationController)
-        appCoordinator.start()
-        
+
+        log.debug("app launch")
+        coordinator = BasicCoordinator<MainRoute>(initialRoute: .root, initialLoadingType: .immediately)
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.rootViewController = coordinator.rootViewController
         window?.makeKeyAndVisible()
         return true
     }

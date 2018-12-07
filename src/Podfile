@@ -9,6 +9,10 @@ target 'Beside' do
   use_frameworks!
 
   # Pods for Beside
+  # 布局
+  pod 'SnapKit'
+  
+  # 基础框架
   pod 'RxSwift'
   pod 'ReSwift'
   pod 'RxCocoa'
@@ -18,7 +22,9 @@ target 'Beside' do
   pod 'MJRefresh'
   pod 'Toast-Swift', '~> 4.0.0'
   pod 'SCLAlertView'
-
+  pod 'rx-coordinator'
+  pod 'Action'
+  
   # 网络
   pod 'RxAlamofire'
   
@@ -33,7 +39,8 @@ target 'Beside' do
   # 调试
   pod 'Bugly'
   pod 'CocoaDebug', :configurations => ['Debug']
-
+  pod 'XCGLogger'
+  
   target 'BesideTests' do
     inherit! :search_paths
     # Pods for testing

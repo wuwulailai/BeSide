@@ -9,7 +9,7 @@
 import UIKit
 import RxSwift
 
-class DashboardViewController: UIViewController {
+class DashboardViewController: BaseViewController {
 
     private var viewModel: DashboardViewModelType!
     private let disposeBag = DisposeBag()
@@ -18,7 +18,6 @@ class DashboardViewController: UIViewController {
         self.init()
         
         self.viewModel = viewModel
-        
     }
     
     override func viewDidLoad() {
